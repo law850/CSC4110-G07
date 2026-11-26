@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 
 # Load the saved model
-model = joblib.load('models/G07_model.joblib')
+model = joblib.load(G07_model_small.joblib')
 
 st.title("Mvua Alert: Rain Tomorrow Predictor")
 st.write("Group G7: Lawrence, Felix, Martin, Winfred, Swynneystone")
