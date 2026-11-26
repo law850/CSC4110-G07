@@ -1,7 +1,9 @@
 # CSC 4110 Machine Learning Group Project - Group G7
 
-## Project Overview
-This project builds machine learning models to predict the maximum temperature (regression) and whether it will rain tomorrow (classification) using the Australian weather dataset. 
+## 📌 Project Overview
+This repository contains the complete machine learning pipeline and web application for **Group G7**. The project uses the "Rain in Australia" dataset (approx. 145,000 daily weather records from 49 stations) to solve two real-world problems for **Mvua Alert**, a fictional weather-alert start-up in Kisumu:
+1. **Regression:** Estimate the maximum temperature (`MaxTemp`) using morning (9 a.m.) readings.
+2. **Classification:** Predict whether it will rain tomorrow (`RainTomorrow`)
 
 ## How to Run the Notebooks
 1. Open the `notebooks` folder.
