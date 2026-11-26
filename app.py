@@ -1,9 +1,10 @@
 import streamlit as st
 import pandas as pd
-import joblib
+import pickle
 
 # Load the saved model
-model = joblib.load('models/G07_model.joblib')
+with open('models/G07_model_pickle.pkl', 'rb') as f:
+    model = pickle.load(f)
 
 st.title("Mvua Alert: Rain Tomorrow Predictor")
 st.write("Group G7: Lawrence, Felix, Martin, Winfred, Swynneystone")
@@ -19,7 +20,6 @@ rain_today = st.selectbox("RainToday", ["No", "Yes"])
 location = st.selectbox("Location", ["Albury", "Sydney", "Melbourne", "Darwin", "Perth"])
 
 if st.button("Predict Rain Tomorrow"):
-    # Create a DataFrame from inputs
     input_data = pd.DataFrame({
         'MinTemp': [min_temp],
         'MaxTemp': [max_temp],
