@@ -1,10 +1,43 @@
 import streamlit as st
 import pandas as pd
-import pickle
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
+from sklearn.impute import SimpleImputer
 
-# Load the saved model
-with open('models/G07_model_pickle.pkl', 'rb') as f:
-    model = pickle.load(f)
+# Cache the data loading and training so it's fast
+@st.cache_resource
+def load_and_train_model():
+    # 1. Load the data from the repo
+    df = pd.read_csv('weatherAUS.csv')
+    df = df.dropna(subset=['RainTomorrow'])
+    df = df.drop(columns=['Evaporation', 'Sunshine', 'Cloud9am', 'Cloud3pm', 'RISK_MM'], errors='ignore')
+    df['RainToday'] = df['RainToday'].map({'No': 0, 'Yes': 1})
+    df['RainTomorrow'] = df['RainTomorrow'].map({'No': 0, 'Yes': 1})
+
+    X = df.drop(columns=['Date', 'RainTomorrow'])
+    y = df['RainTomorrow']
+
+    # 2. Build a quick pipeline
+    numeric_features = X.select_dtypes(include=['int64', 'float64']).columns
+    categorical_features = X.select_dtypes(include=['object']).columns
+
+    preprocessor = ColumnTransformer(
+        transformers=[
+            ('num', Pipeline(steps=[('imputer', SimpleImputer(strategy='median')), ('scaler', StandardScaler())]), numeric_features),
+            ('cat', Pipeline(steps=[('imputer', SimpleImputer(strategy='most_frequent')), ('onehot', OneHotEncoder(handle_unknown='ignore'))]), categorical_features)])
+
+    # Use a small model to train fast
+    pipe = Pipeline(steps=[('preprocessor', preprocessor),
+                           ('classifier', RandomForestClassifier(n_estimators=10, max_depth=5, random_state=42))])
+
+    pipe.fit(X, y)
+    return pipe
+
+# Show a spinner while it trains
+with st.spinner("Training model on startup (this takes 10 seconds)..."):
+    model = load_and_train_model()
 
 st.title("Mvua Alert: Rain Tomorrow Predictor")
 st.write("Group G7: Lawrence, Felix, Martin, Winfred, Swynneystone")
