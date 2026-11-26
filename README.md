@@ -12,6 +12,8 @@ This repository contains the complete machine learning pipeline and web applicat
 4. Ensure the dataset `weatherAUS.csv` is in `CSC4110_G07/data/`.
 5. Click `Runtime` -> `Run all`.
 
+
+**Live Public App Link:** [https://csc4110-g07-mbbcvnabrajdc6ulxkcv78.streamlit.app/](https://csc4110-g07-mbbcvnabrajdc6ulxkcv78.streamlit.app/)
 ## How to Run the App
 1. Navigate to the `app` folder.
 2. Run the app locally using: `streamlit run app.py`
