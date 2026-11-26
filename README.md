@@ -29,7 +29,7 @@ This repository contains the complete machine learning pipeline and web applicat
 When you receive an SMS from Mvua Alert, it uses today's weather to guess if it will rain tomorrow. If the message says rain is coming, it is best to stay close to the shore and secure your nets. The app is not a replacement for official warnings, but it helps you plan your day safely.
 
 ##🛠️ Technologies Used
-**Python** (Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn)
-**Google Colab** (Model training and evaluation)
-**Streamlit** (Web application deployment)
-**Joblib** (Model packaging and serialization)
+1. **Python** (Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn)
+2. **Google Colab** (Model training and evaluation)
+3. **Streamlit** (Web application deployment)
+4. **Joblib** (Model packaging and serialization)
