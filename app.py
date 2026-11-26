@@ -16,7 +16,8 @@ def load_and_train_model():
     df['RainToday'] = df['RainToday'].map({'No': 0, 'Yes': 1})
     df['RainTomorrow'] = df['RainTomorrow'].map({'No': 0, 'Yes': 1})
 
-    X = df.drop(columns=['Date', 'RainTomorrow'])
+    app_features = ['MinTemp', 'MaxTemp', 'Rainfall', 'Humidity3pm', 'Pressure3pm', 'WindGustSpeed', 'RainToday', 'Location']
+X = df[app_features]
     y = df['RainTomorrow']
 
     # 2. Build a quick pipeline
