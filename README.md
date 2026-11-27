@@ -27,7 +27,7 @@ This repository contains the complete machine learning pipeline and web applicat
 | Winfred Mutuku | Task 3.2 (Regularisation) | Task 9.1 (Streamlit App) |
 | Swynneystone Ongoto | Task 4 (Classification) | Task 6 (Trees & Ensembles) |
 
-## For the Fisher (Plain Words)
+## For the Fisher (Plain Words)..
 When you receive an SMS from Mvua Alert, it uses today's weather to guess if it will rain tomorrow. If the message says rain is coming, it is best to stay close to the shore and secure your nets. The app is not a replacement for official warnings, but it helps you plan your day safely.
 
 ##🛠️ Technologies Used
