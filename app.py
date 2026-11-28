@@ -41,7 +41,7 @@ with st.spinner("Training model on startup (this takes 10 seconds)..."):
     model = load_and_train_model()
 
 st.title("Mvua Alert: Rain Tomorrow Predictor")
-st.write("Group G7: Lawrence, Felix, Martin, Winfred, Swynneystone")
+
 
 st.header("Enter Today's Weather:")
 min_temp = st.number_input("MinTemp (°C)", value=15.0)
