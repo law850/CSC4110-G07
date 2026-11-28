@@ -1,7 +1,7 @@
-# Machine Learning Group Project 
+# Machine Learning  Project 
 
 ## 📌 Project Overview
-This repository contains the complete machine learning pipeline and web application for Mvua Alert. The project uses the "Rain in Australia" dataset (approx. 145,000 daily weather records from 49 stations) to solve two real-world problems for **Mvua Alert**, a fictional weather-alert start-up in Kisumu:
+This repository contains the complete machine learning pipeline and web application for Mvua Alert to determine whether it will rain tomorrow or not. The project uses the "Rain in Australia" dataset (approx. 145,000 daily weather records from 49 stations) to solve two real-world problems for **Mvua Alert**, a fictional weather-alert start-up in Kisumu:
 1. **Regression:** Estimate the maximum temperature (`MaxTemp`) using morning (9 a.m.) readings.
 2. **Classification:** Predict whether it will rain tomorrow (`RainTomorrow`)
 
